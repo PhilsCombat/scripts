@@ -89,7 +89,10 @@ if (__name__ == '__main__'):
 # =clip=
 
     if (opt.clip):
-        import pyperclip
-        pyperclip.copy(str(val))
+        try:
+            import pyperclip
+            pyperclip.copy(str(val))
+        except:
+            print("Copy to clipboard failed due to module pyperclip missing")
 
     print(val)
