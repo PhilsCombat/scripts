@@ -47,10 +47,10 @@ if (__name__ == '__main__'):
     parser.add_argument('--no-prefix', action='store_true', help='Remove pythons prefix (0x 0o 0b)')
 
     sub_parser = parser.add_subparsers(dest="base")
-    sub_hex = sub_parser.add_parser('hex')
-    sub_int = sub_parser.add_parser('int')
-    sub_oct = sub_parser.add_parser('oct')
-    sub_bin = sub_parser.add_parser('bin')
+    sub_hex = sub_parser.add_parser('hex', help='Return as hex number')
+    sub_int = sub_parser.add_parser('int', help='Return as int number')
+    sub_oct = sub_parser.add_parser('oct', help='Return as oct number')
+    sub_bin = sub_parser.add_parser('bin', help='Return as bin number')
 
     opt = parser.parse_args(sys.argv[1:])
 
