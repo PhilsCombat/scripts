@@ -5,8 +5,9 @@ import randbase
 
 commentDict = {
     ".py": '#',
-    ".bash": '#',
+    ".sh": '#',
     ".mcfunction": '#',
+    ".ps1": '#',
 
     ".js": '//',
     ".ts": '//',
@@ -14,6 +15,8 @@ commentDict = {
     ".c": '//',
     ".cpp": '//',
     ".h": '//',
+    ".rs": '//',
+    ".go": '//',
 
     ".lua": '--',
 
@@ -29,7 +32,7 @@ def generateHeadline(commentChar: str, pre: str, title: str, suf: str, width=80)
     out = ''
     if (pre):
         out = f"{commentChar} {pre * width}\n"
-    return out + f"{commentChar} {' ' * titleIndent + title}\n{commentChar} {suf * width}\n"
+    return out + f"{commentChar} {' ' * titleIndent + title.upper()}\n{commentChar} {suf * width}\n"
 
 
 def patternByFiletype(suffix: str):
@@ -79,7 +82,7 @@ def formatFile(path: str, width = 80, keepOriginal = False):
     original.close()
     edited.close()
     if (not keepOriginal):
-        os.rename(path, nameEdited + extension)
+        os.replace(nameEdited + extension, path)
 
 
 def getFiles(path: str, pattern: str = None, *args):
@@ -98,7 +101,9 @@ def getFiles(path: str, pattern: str = None, *args):
     return filesOnly
 
 
-# =main=
+# ==============================================================================
+#                                      MAIN
+# ==============================================================================
 
 
 if (__name__ == "__main__"):
