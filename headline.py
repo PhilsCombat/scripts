@@ -5,15 +5,20 @@ import randbase
 
 commentDict = {
     ".py": '#',
-    ".bash": '#',
+    ".sh": '#',
     ".mcfunction": '#',
+    ".ps1": '#',
 
     ".js": '//',
+    ".vue": '//',  # script section only
     ".ts": '//',
+    ".vue": '//',  # does not check in wich section
     ".java": '//',
     ".c": '//',
     ".cpp": '//',
     ".h": '//',
+    ".rs": '//',
+    ".go": '//',
 
     ".lua": '--',
 
