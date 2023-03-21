@@ -10,7 +10,9 @@ commentDict = {
     ".ps1": '#',
 
     ".js": '//',
+    ".vue": '//',  # script section only
     ".ts": '//',
+    ".vue": '//',  # does not check in wich section
     ".java": '//',
     ".c": '//',
     ".cpp": '//',
